@@ -3,56 +3,176 @@
 
 <head>
   <meta charset="utf-8">
-
   <title>The Unofficial Best Darkest Dungeon Curio Guide</title>
   <meta name="Everything you need to know about Darkest Dungeon Curios" content="Stop guessing.">
   <meta name="plasticmacaroni" content="Darkest Dungeon Curio Guide">
-
   <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+  <style>
+    html {
+      font-family: 'Ubuntu Condensed', sans-serif;
+    }
+
+    .inline-block {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    #sidebar {
+      width: 25%;
+      height: 100vh;
+      background-color: grey;
+    }
+
+    #curio-list {
+      width: 74%;
+    }
+
+    ul {
+      width: 100%;
+      padding-left: 15px;
+    }
+
+    li {
+      background-color: #eee;
+      list-style: none;
+      width: 30.5%;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0.5%;
+      border-color: #530000;
+      border-width: 2px;
+      border-style: solid;
+    }
+
+    .name {
+      margin: 0;
+      margin-left: 4px;
+      font-size: 2em;
+    }
+
+    .type {
+      margin: 0;
+      margin-left: 8px;
+      font-size: 1.2em;
+      color: #575757
+    }
+
+    .desc-image-container {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0.9em;
+      width: 32%;
+      text-align: center;
+    }
+
+    p {
+      padding: none;
+      margin: 5px;
+    }
+
+    .image {
+      width: 96%;
+      margin: 0 2% 0 2%;
+    }
+
+    .name {
+      color: #530000
+    }
+
+    .desc-image {
+      width: 60%;
+    }
+
+    .underline {
+      width: 40%;
+      border-bottom-color: #530000;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="curio-list">
+  <div id="sidebar" class="inline-block">
+  </div>
+
+  <div id="curio-list" class="inline-block">
     <input type="text" class="fuzzy-search" />
     <ul class="list">
-      <li>
-        <h3 class="name">Curio 1</h3>
-        <p class="type">Knowledge</p>
-        <p class="search-terms" hidden>wood</p>
-      </li>
     </ul>
   </div>
 
   <script>
+    var images = {
+      nothing: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/b/b9/Ability_none.png/25px-Ability_none.png?version=22589b5e633db383e058857ba6298c16\'><br>Nothing</div>",
+      holywater: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/2/25/Holy_Water.png/40px-Holy_Water.png?version=8eba1d4c341de647ca90f8710e7f193a\'><br>Holy Water</div>",
+      skeletonkey: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/2/25/Holy_Water.png/40px-Holy_Water.png?version=8eba1d4c341de647ca90f8710e7f193a\'><br>Skeleton Key</div>",
+      antivenom: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/2/25/Holy_Water.png/40px-Holy_Water.png?version=8eba1d4c341de647ca90f8710e7f193a\'><br>Antivenom</div>"
+    };
     var options = {
-      valueNames: ['name', 'type', 'location', 'searchterms', 'special'],
+      valueNames: ['name', 'type', {
+        name: 'image',
+        attr: 'src'
+      }, 'location', 'searchterms', 'items', 'itemsresult', 'noitemsresult', 'info'],
       fuzzySearch: {
         searchClass: "fuzzy-search",
         location: 0,
         distance: 100,
         threshold: 0.4,
         multiSearch: true
-      }
+      },
+      item: `<li><h3 class="name"></h3><div class="underline"></div><p class="type"></p><img class="image" src=""/><p class="location" hidden></p><p class="search-terms" hidden></p><p class="info" hidden></p>
+      <p class="items"></p></li>`
     };
-    var values = [{
-      name: 'Curio 1',
+
+    var curioList = new List('curio-list', options);
+
+    curioList.add([{
+      name: 'Crate',
       type: 'Knowledge',
-      location: 'Weald',
+      image: 'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/4/4f/Crate.png/180px-Crate.png?version=cf5a1724537b1265c8f589462d399777',
+      location: 'All',
       searchterms: 'dark, gloomy',
-      special: ''
+      items: images.nothing,
+      itemsresult: '',
+      noitemresult: '',
+      info: ''
     }, {
-      name: 'Curio 2',
-      type: 'Power',
-      location: 'Cove',
-      searchterms: 'happy, fun',
-      special: ''
-    }];
-    var curioList = new List('curio-list', options, values);
+      name: 'Discarded Pack ',
+      type: 'Knowledge',
+      image: '',
+      location: 'All',
+      searchterms: 'dark, gloomy',
+      items: images.nothing,
+      itemsresult: '',
+      noitemresult: '',
+      info: ''
+    }, {
+      name: 'Eldritch Altar',
+      type: 'Haunted, Unholy',
+      image: '',
+      location: 'All',
+      searchterms: 'dark, gloomy',
+      items: images.nothing + images.holywater + images.skeletonkey,
+      itemsresult: '$MASK$ Purge Negative Quirk',
+      noitemresult: '$STRESS 40% Stress +25<br>$MASK$ 10% Negative Quirk<br>50% Nothing',
+      info: ''
+    }, {
+      name: 'Heirloom Chest',
+      type: 'Treasure',
+      image: '',
+      location: 'All',
+      searchterms: 'dark, gloomy',
+      items: images.nothing + images.antivenom,
+      itemsresult: "",
+      noitemresult: '$STRESS 40% Stress +25<br>$MASK$ 10% Negative Quirk<br>50% Nothing',
+      info: ''
+    }]);
   </script>
 </body>
 
