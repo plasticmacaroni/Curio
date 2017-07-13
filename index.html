@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>The Unofficial Best Darkest Dungeon Curio Guide</title>
+  <meta name="Everything you need to know about Darkest Dungeon Curios" content="Stop guessing.">
+  <meta name="plasticmacaroni" content="Darkest Dungeon Curio Guide">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div id="curio-list">
+    <input type="text" class="fuzzy-search" />
+    <ul class="list">
+      <li>
+        <h3 class="name">Curio 1</h3>
+        <p class="type">Knowledge</p>
+        <p class="search-terms" hidden>wood</p>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    var options = {
+      valueNames: ['name', 'type', 'location', 'searchterms', 'special'],
+      fuzzySearch: {
+        searchClass: "fuzzy-search",
+        location: 0,
+        distance: 100,
+        threshold: 0.4,
+        multiSearch: true
+      }
+    };
+    var values = [{
+      name: 'Curio 1',
+      type: 'Knowledge',
+      location: 'Weald',
+      searchterms: 'dark, gloomy',
+      special: ''
+    }, {
+      name: 'Curio 2',
+      type: 'Power',
+      location: 'Cove',
+      searchterms: 'happy, fun',
+      special: ''
+    }];
+    var curioList = new List('curio-list', options, values);
+  </script>
+</body>
+
+</html>
