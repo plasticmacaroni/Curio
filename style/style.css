@@ -1,5 +1,6 @@
 html {
     font-family: 'Ubuntu Condensed', sans-serif;
+    cursor: url(/assets/cursor.png), auto;
 }
 
 body {
@@ -10,41 +11,90 @@ body {
 }
 
 input {
-    height: 4vh;
-    margin: 2vh 0 2vh 0;
-    width: 25vw;
+    height: 6vh;
+    width: 27vw;
+    margin-top: 50%;
     border-color: #530000;
     border-width: 3px;
+    text-align: right;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 1.7vw;
+    background-color: rgb(60, 60, 60);
+}
+
+#header-image-wrap {
+    width: 54.8vw;
+    display: inline-block;
+    text-align: left;
+}
+
+#header-image {
+    width: 51vw;
+}
+
+.button-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+
+#headline-text {
+    position: absolute;
+    color: #8CB7BA;
+    font-family: 'IM Fell DW Pica', serif;
+    font-style: italic;
+    font-size: 5vw;
+    margin-left: 15vw;
+    margin-top: 14%;
+    user-select: none;
 }
 
 #sidebar {
-    width: 0vw;
+    width: 12vw;
     height: 100vh;
     display: inline-block;
     background-color: #060606;
+    position: fixed;
+}
+
+#topnav {
+    text-align: right;
+    height: auto;
+}
+
+#search-input {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #curio-list {
-    width: 80vw;
-    display: inline-block;
-    vertical-align: top;
+    width: 83vw;
+    margin-left: 13vw;
+}
+
+.itemsresult img {
+    float: left;
+    width: 30%;
 }
 
 ul {
     padding: 0;
     display: grid;
-    grid-template-columns: 32vw 32vw 32vw;
+    grid-template-columns: 27vw 27vw 27vw;
     grid-template-rows: auto auto auto;
     grid-gap: 1vw;
 }
 
 li {
-    background-color: rgba(258, 258, 258, .7);
+    background-color: rgba(60, 60, 60, .9);
     list-style: none;
     vertical-align: top;
-    border-color: #530000;
-    border-width: 5px;
+    border-color: #510000;
+    border-width: 0px;
     border-style: solid;
+    color: white;
 }
 
 .name {
@@ -57,14 +107,15 @@ li {
     margin: 0;
     margin-left: 8px;
     font-size: 1.2em;
-    color: #2b3e40;
+    color: #98b7ba;
+    margin-bottom: 2vh;
 }
 
 .desc-image-container {
     vertical-align: top;
     font-size: 0.9em;
-    width: 25%;
-    height: 100%;
+    width: 16%;
+    height: 16%;
     text-align: center;
     float: left;
 }
@@ -75,12 +126,17 @@ p {
 }
 
 .image {
-    width: 50%;
+    height: 18vh;
     margin: 0 25% 0 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7%;
 }
 
 .name {
-    color: #530000;
+    color: white;
+    margin-bottom: 5px;
 }
 
 .wrap {
@@ -90,7 +146,7 @@ p {
 
 .underline {
     width: 40%;
-    border-bottom-color: #530000;
+    border-bottom-color: #7C0605;
     border-bottom-width: 2px;
     border-bottom-style: solid;
 }
@@ -104,11 +160,18 @@ p {
 }
 
 .subimage {
-    width: 9vw;
+    width: 8vw;
     height: auto;
     display: inline;
     padding: 0;
     margin: 3px;
+}
+
+.wrap .subimage-divider {
+    border-bottom-color: #7C0605;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    margin-bottom: 1vh;
 }
 
 .itemsresult {
@@ -118,4 +181,42 @@ p {
 .flex {
     display: flex;
     justify-content: space-around;
+}
+
+button {
+    height: 15vh;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    border: none;
+}
+
+.all {
+    background-image: url(/assets/buttons/all.png);
+    background-position: center;
+    background-size: 120%;
+}
+
+.warrens {
+    background-image: url(/assets/buttons/warrens.png);
+    background-position: center;
+    background-size: 120%;
+}
+
+.weald {
+    background-image: url(/assets/buttons/weald.png);
+    background-position: center;
+    background-size: 120%;
+}
+
+.cove {
+    background-image: url(/assets/buttons/cove.png);
+    background-position: center;
+    background-size: 120%;
+}
+
+.ruins {
+    background-image: url(/assets/buttons/ruins.png);
+    background-position: center;
+    background-size: 120%;
 }
