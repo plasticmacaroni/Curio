@@ -6,107 +6,19 @@
   <title>The Unofficial Best Darkest Dungeon Curio Guide</title>
   <meta name="Everything you need to know about Darkest Dungeon Curios" content="Stop guessing.">
   <meta name="plasticmacaroni" content="Darkest Dungeon Curio Guide">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>
+    $.getScript("/script/main.js", function (data, textStatus, jqxhr) {
+      setUp();
+    });
+  </script>
+  <!--<script type="text/javascript" src="/script/main.js"></script>-->
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
-  <style>
-    html {
-      font-family: 'Ubuntu Condensed', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    input {
-      height: 4vh;
-      margin: 2vh 0 2vh 0;  
-      width: 15vw;
-    }
-
-    #sidebar {
-      width: 15vw;
-      height: 100vh;
-      display: inline-block;
-      background-color: grey;
-    }
-
-    #curio-list {
-      width: 80vw;
-      display: inline-block;
-      vertical-align: top;
-    }
-
-    #search-input {}
-
-    ul {
-      margin: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 32vh 32vh 32vh;
-      grid-gap: 10px;
-    }
-
-    li {
-      background-color: #eee;
-      list-style: none;
-      vertical-align: top;
-      border-color: #530000;
-      border-width: 5px;
-      border-style: solid;
-    }
-
-    .name {
-      margin: 0;
-      margin-left: 4px;
-      font-size: 2em;
-    }
-
-    .type {
-      margin: 0;
-      margin-left: 8px;
-      font-size: 1.2em;
-      color: #575757
-    }
-
-    .desc-image-container {
-      display: inline-block;
-      vertical-align: top;
-      font-size: 0.9em;
-      width: 32%;
-      text-align: center;
-    }
-
-    p {
-      padding: none;
-      margin: 5px;
-    }
-
-    .image {
-      width: 96%;
-      margin: 0 2% 0 2%;
-    }
-
-    .name {
-      color: #530000
-    }
-
-    .desc-image {
-      width: 60%;
-    }
-
-    .underline {
-      width: 40%;
-      border-bottom-color: #530000;
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
 </head>
 
 <body>
@@ -120,104 +32,6 @@
     <ul class="list">
     </ul>
   </div>
-
-  <script>
-    var images = {
-      nothing: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/b/b9/Ability_none.png/25px-Ability_none.png?version=22589b5e633db383e058857ba6298c16\'><br>Nothing</div>",
-      holywater: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/2/25/Holy_Water.png/40px-Holy_Water.png?version=8eba1d4c341de647ca90f8710e7f193a\'><br>Holy Water</div>",
-      skeletonkey: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/2/25/Holy_Water.png/40px-Holy_Water.png?version=8eba1d4c341de647ca90f8710e7f193a\'><br>Skeleton Key</div>",
-      antivenom: "<div class=\"desc-image-container\"><img class=\"desc-image\" src=\'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/2/25/Holy_Water.png/40px-Holy_Water.png?version=8eba1d4c341de647ca90f8710e7f193a\'><br>Antivenom</div>"
-    };
-    var options = {
-      valueNames: ['name', 'type', {
-        name: 'image',
-        attr: 'src'
-      }, 'location', 'searchterms', 'items', 'itemsresult', 'noitemsresult', 'info'],
-      fuzzySearch: {
-        searchClass: "fuzzy-search",
-        location: 0,
-        distance: 100,
-        threshold: 0.4,
-        multiSearch: true
-      },
-      item: `<li><h3 class="name"></h3><div class="underline"></div><p class="type"></p><img class="image" src=""/><p class="location" hidden></p><p class="search-terms" hidden></p><p class="info" hidden></p>
-      <p class="items"></p></li>`
-    };
-
-    var curioList = new List('curio-list', options);
-
-    curioList.add([{
-      name: 'Crate',
-      type: 'Knowledge',
-      image: 'https://hydra-media.cursecdn.com/darkestdungeon.gamepedia.com/thumb/4/4f/Crate.png/180px-Crate.png?version=cf5a1724537b1265c8f589462d399777',
-      location: 'All',
-      searchterms: 'dark, gloomy',
-      items: images.nothing,
-      itemsresult: '',
-      noitemresult: '',
-      info: ''
-    }, {
-      name: 'Discarded Pack ',
-      type: 'Knowledge',
-      image: '',
-      location: 'All',
-      searchterms: 'dark, gloomy',
-      items: images.nothing,
-      itemsresult: '',
-      noitemresult: '',
-      info: ''
-    }, {
-      name: 'Eldritch Altar',
-      type: 'Haunted, Unholy',
-      image: '',
-      location: 'All',
-      searchterms: 'dark, gloomy',
-      items: images.nothing + images.holywater + images.skeletonkey,
-      itemsresult: '$MASK$ Purge Negative Quirk',
-      noitemresult: '$STRESS 40% Stress +25<br>$MASK$ 10% Negative Quirk<br>50% Nothing',
-      info: ''
-    }, {
-      name: 'Eldritch Altar',
-      type: 'Haunted, Unholy',
-      image: '',
-      location: 'All',
-      searchterms: 'dark, gloomy',
-      items: images.nothing + images.holywater + images.skeletonkey,
-      itemsresult: '$MASK$ Purge Negative Quirk',
-      noitemresult: '$STRESS 40% Stress +25<br>$MASK$ 10% Negative Quirk<br>50% Nothing',
-      info: ''
-    }, {
-      name: 'Eldritch Altar',
-      type: 'Haunted, Unholy',
-      image: '',
-      location: 'All',
-      searchterms: 'dark, gloomy',
-      items: images.nothing + images.holywater + images.skeletonkey,
-      itemsresult: '$MASK$ Purge Negative Quirk',
-      noitemresult: '$STRESS 40% Stress +25<br>$MASK$ 10% Negative Quirk<br>50% Nothing',
-      info: ''
-    }, {
-      name: 'Eldritch Altar',
-      type: 'Haunted, Unholy',
-      image: '',
-      location: 'All',
-      searchterms: 'dark, gloomy',
-      items: images.nothing + images.holywater + images.skeletonkey,
-      itemsresult: '$MASK$ Purge Negative Quirk',
-      noitemresult: '$STRESS 40% Stress +25<br>$MASK$ 10% Negative Quirk<br>50% Nothing',
-      info: ''
-    }, {
-      name: 'Heirloom Chest',
-      type: 'Treasure',
-      image: '',
-      location: 'All',
-      searchterms: 'dark, gloomy',
-      items: images.nothing + images.antivenom,
-      itemsresult: "",
-      noitemresult: '$STRESS 40% Stress +25<br>$MASK$ 10% Negative Quirk<br>50% Nothing',
-      info: ''
-    }]);
-  </script>
 </body>
 
 </html>

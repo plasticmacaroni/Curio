@@ -1,0 +1,121 @@
+html {
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://images7.alphacoders.com/611/thumb-1920-611159.jpg");
+    background-attachment: fixed;
+}
+
+input {
+    height: 4vh;
+    margin: 2vh 0 2vh 0;
+    width: 25vw;
+    border-color: #530000;
+    border-width: 3px;
+}
+
+#sidebar {
+    width: 0vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: #060606;
+}
+
+#curio-list {
+    width: 80vw;
+    display: inline-block;
+    vertical-align: top;
+}
+
+ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 32vw 32vw 32vw;
+    grid-template-rows: auto auto auto;
+    grid-gap: 1vw;
+}
+
+li {
+    background-color: rgba(258, 258, 258, .7);
+    list-style: none;
+    vertical-align: top;
+    border-color: #530000;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.name {
+    margin: 0;
+    margin-left: 4px;
+    font-size: 2em;
+}
+
+.type {
+    margin: 0;
+    margin-left: 8px;
+    font-size: 1.2em;
+    color: #2b3e40;
+}
+
+.desc-image-container {
+    vertical-align: top;
+    font-size: 0.9em;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+p {
+    padding: none;
+    margin: 5px;
+}
+
+.image {
+    width: 50%;
+    margin: 0 25% 0 25%;
+}
+
+.name {
+    color: #530000;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.underline {
+    width: 40%;
+    border-bottom-color: #530000;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.float-left {
+    float: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.subimage {
+    width: 9vw;
+    height: auto;
+    display: inline;
+    padding: 0;
+    margin: 3px;
+}
+
+.itemsresult {
+    margin: 4px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
