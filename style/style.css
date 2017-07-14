@@ -1,12 +1,12 @@
 html {
     font-family: 'Ubuntu Condensed', sans-serif;
-    cursor: url(/assets/cursor.png), auto;
+    cursor: url(/curio/assets/cursor.png), auto;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-image: url("https://images7.alphacoders.com/611/thumb-1920-611159.jpg");
+    background-image: url(/curio/assets/background.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 170%;
@@ -197,31 +197,31 @@ button {
 }
 
 .all {
-    background-image: url(/assets/buttons/all.png);
+    background-image: url(/curio/assets/buttons/all.png);
     background-position: center;
     background-size: 120%;
 }
 
 .warrens {
-    background-image: url(/assets/buttons/warrens.png);
+    background-image: url(/curio/assets/buttons/warrens.png);
     background-position: center;
     background-size: 120%;
 }
 
 .weald {
-    background-image: url(/assets/buttons/weald.png);
+    background-image: url(/curio/assets/buttons/weald.png);
     background-position: center;
     background-size: 120%;
 }
 
 .cove {
-    background-image: url(/assets/buttons/cove.png);
+    background-image: url(/curio/assets/buttons/cove.png);
     background-position: center;
     background-size: 120%;
 }
 
 .ruins {
-    background-image: url(/assets/buttons/ruins.png);
+    background-image: url(/curio/assets/buttons/ruins.png);
     background-position: center;
     background-size: 120%;
 }
