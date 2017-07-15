@@ -45,6 +45,13 @@ input {
     justify-content: space-around;
 }
 
+.button-flex button {
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    margin-left: 1px;
+}
+
 #headline-text {
     position: absolute;
     color: #8CB7BA;
