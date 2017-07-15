@@ -9,7 +9,7 @@ body {
     background-image: url(/curio/assets/background.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 170%;
+    background-size: auto 170%;
 }
 
 input {
