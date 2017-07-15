@@ -444,7 +444,7 @@ function setUp() {
         location: 'All, Cove, Ruins, Warrens, Weald, Courtyard',
         searchterms: 'tentacle, orb, red',
         items: images.hand + images.torch,
-        itemsresult: prep([images.nothing, "Fight Shambler"]) + prep([images.nothing, "100% Nothing"]),
+        itemsresult: prep([images.nothing, "100% Nothing"]) + prep([images.nothing, "Fight Shambler"]),
         info: ''
     }, {
         name: 'Stack of Books',
