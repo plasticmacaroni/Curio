@@ -34,16 +34,8 @@ var options = {
         threshold: 0.1,
         multiSearch: true
     },
-    item: `<li onmouseover="putUp(this)">
-            <img class="image" src=""/>
-            <div class="information">
-                <h3 class="name"></h3>
-                <div class="underline"></div><p class="type"></p>
-                <p class="location" hidden></p>
-                <p class="search-terms" hidden></p>
-                <p class="info" hidden></p>
-                <p class="items flex"></p><div class="itemsresult flex center"></div></li>
-            </div>`
+    item: `<li><h3 class="name"></h3><div class="underline"></div><p class="type"></p><img class="image" src=""/><p class="location" hidden></p><p class="search-terms" hidden></p><p class="info" hidden></p>
+      <p class="items flex"></p><div class="itemsresult flex center"></div></li>`
 };
 
 function setUp() {
@@ -488,16 +480,4 @@ function prep(results) {
 
 function findImage(assetName) {
     return "/curio/assets/curios/" + assetName + ".png"
-}
-
-previousElement = "";
-
-function putUp(pass) {
-    if (previousElement != "") {
-        $("#information .information").appendTo(previousElement);
-        previousElement.querySelector("div").style.display = "none";
-    }
-    previousElement = pass;
-    pass.querySelector("div").style.display = "inline";
-    $("#information").append(pass.querySelector("div"));
 }

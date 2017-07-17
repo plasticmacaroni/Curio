@@ -1,7 +1,6 @@
 html {
     font-family: 'Ubuntu Condensed', sans-serif;
     cursor: url(/curio/assets/cursor.png), auto;
-    overflow-x: hidden;
 }
 
 body {
@@ -15,7 +14,8 @@ body {
 
 input {
     height: 6vh;
-    width: 30vw;
+    width: 25.25vw;
+    margin-top: 50%;
     border-color: #530000;
     border-width: 3px;
     text-align: right;
@@ -24,44 +24,32 @@ input {
     font-size: 1.7vw;
     background-color: rgb(60, 60, 60);
     color: white;
-    text-align: center;
+    padding-left: 5%;
+    margin-left: -5%;
 }
 
 #header-image-wrap {
+    width: 54.8vw;
+    display: inline-block;
+    text-align: left;
 }
 
 #header-image {
-    width: 100%;
-}
-
-.header-block {
-    width: 35.4vw;
-    display: inline-block;
-    float: left;
-    text-align: center;
-}
-
-#sidebar {
-    display: inline-block;
+    width: 51vw;
 }
 
 .button-flex {
-    margin: 11% 5% 1% 5%;
     display: flex;
+    flex-direction: column;
+    height: 100%;
     justify-content: space-around;
 }
 
 .button-flex button {
-    font-size: 1.3vw;
-    font-family: 'Ubuntu Condensed', sans-serif;
     border-color: white;
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
     margin-left: 1px;
-    height: 5vw;
-    min-width: 6vw;
-    color: white;
-    display: inline-block;
 }
 
 #headline-text {
@@ -69,10 +57,18 @@ input {
     color: #8CB7BA;
     font-family: 'IM Fell DW Pica', serif;
     font-style: italic;
-    font-size: 4vw;
-    margin-left: 5vw;
-    margin-top: -5.3%;
+    font-size: 5vw;
+    margin-left: 15vw;
+    margin-top: 14%;
     user-select: none;
+}
+
+#sidebar {
+    width: 12vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: #060606;
+    position: fixed;
 }
 
 #topnav {
@@ -80,32 +76,14 @@ input {
     height: auto;
 }
 
-.information {
-    position: fixed;
-    width: 25vw;
-    height: 100vh;
-    background-image: url(/curio/assets/texture.png);
-    display: none;
-    color: white;
-}
-
 #search-input {
-    margin: 2% 5% 5% 5%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 #curio-list {
-    padding: 0 2% 0 2%;
-    width: 70.8vw;
-    margin: 0 0 0 25vw;
-    background-color: rgba(60, 60, 60, .6);
-}
-
-.list {
-    margin-top: 5%;
-}
-
-.items {
-    margin-top: 10vh;
+    width: 83vw;
+    margin-left: 13vw;
 }
 
 .itemsresult img {
@@ -114,10 +92,11 @@ input {
 }
 
 ul {
-    display: inline-block;
-    text-align: center;
     padding: 0;
-    margin: 0;
+    display: grid;
+    grid-template-columns: 27vw 27vw 27vw;
+    grid-template-rows: auto auto auto;
+    grid-gap: 1vw;
 }
 
 .all {
@@ -151,25 +130,27 @@ ul {
 }
 
 li {
+    background-color: rgba(60, 60, 60, .9);
     list-style: none;
     vertical-align: top;
     border-color: #510000;
     border-width: 0px;
     border-style: solid;
     color: white;
-    float: left;
 }
 
 .name {
-    color: white;
-    margin: 10vh 0 2vh 4px;
+    margin: 0;
+    margin-left: 4px;
     font-size: 2em;
 }
 
 .type {
-    margin: 1vh 0 2vh 8px;
+    margin: 0;
+    margin-left: 8px;
     font-size: 1.2em;
     color: #98b7ba;
+    margin-bottom: 2vh;
 }
 
 .desc-image-container {
@@ -187,12 +168,17 @@ p {
 }
 
 .image {
-    width: 11.8vw;
-    margin: 0;
-    display: inline-block;
+    height: 18vh;
+    margin: 0 25% 0 25%;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 7%;
+}
+
+.name {
+    color: white;
+    margin-bottom: 5px;
 }
 
 .wrap {
@@ -239,28 +225,103 @@ p {
     justify-content: space-around;
 }
 
+button {
+    height: 15vh;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    border: none;
+}
+
 @media only screen and (max-device-width: 736px) {
+    .name {
+        font-size: 8vw;
+    }
+    .type {
+        font-size: 6vw;
+    }
+    .subimage {
+        font-size: 2.5em;
+    }
+    .itemsresult img {
+        width: 100%;
+    }
     .image {
-        width: 14vw;
+        max-width: 100%;
+    }
+    html {
+        background-color: black;
+    }
+    #sidebar {
+        width: 15%;
+        height: 100%;
+    }
+    #header-image-wrap {
+        margin-left: 17vw;
+        text-align: center;
+        display: inherit;
+    }
+    #header-image {
+        width: 50vw;
+    }
+    #headline-text {
+        margin-left: 27vw;
     }
     #search-input {
         text-align: center;
-        margin: 5vw 0 0 0;
+        margin-left: 5vw;
+    }
+    .button-flex button {
+        font-size: 3vw;
     }
     input {
-        width: 50vw;
-        margin-bottom: 3vh;
-    }
-    #header-image-wrap {
-        margin-right: 0;
+        height: 12vh;
+        width: 80vw;
+        margin-top: 15px;
+        padding: 0;
+        margin-left: 0;
+        font-size: 4.4vw;
         text-align: center;
-        float: none;
-        display: block;
     }
-    #headline-text {
-        margin-left: 24.5vw;
+    ul {
+        padding: 0%;
+        margin-left: 5vw;
+        display: grid;
+        grid-template-columns: 81vw;
+        grid-template-rows: auto auto auto;
+        grid-gap: 1vw;
     }
-    #topnav {
-        margin-bottom: 0;
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url(/curio/assets/background.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+    }
+    .all {
+        background-image: url(/curio/assets/buttons/all.png);
+        background-position: center;
+        background-size: auto 100%;
+    }
+    .warrens {
+        background-image: url(/curio/assets/buttons/warrens.png);
+        background-position: center;
+        background-size: auto 100%;
+    }
+    .weald {
+        background-image: url(/curio/assets/buttons/weald.png);
+        background-position: center;
+        background-size: auto 100%;
+    }
+    .cove {
+        background-image: url(/curio/assets/buttons/cove.png);
+        background-position: center;
+        background-size: auto 100%;
+    }
+    .ruins {
+        background-image: url(/curio/assets/buttons/ruins.png);
+        background-position: center;
+        background-size: auto 100%;
     }
 }
