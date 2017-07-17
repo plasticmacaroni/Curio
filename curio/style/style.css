@@ -27,7 +27,12 @@ input {
     text-align: center;
 }
 
-#header-image-wrap {
+a {
+    color: #8CB7BA;
+}
+
+a:hover {
+    color: #8eB9Bc;
 }
 
 #header-image {
@@ -52,7 +57,7 @@ input {
 }
 
 .button-flex button {
-    font-size: 1.3vw;
+    font-size: 1.15vw;
     font-family: 'Ubuntu Condensed', sans-serif;
     border-color: white;
     border-width: 2px;
@@ -80,11 +85,21 @@ input {
     height: auto;
 }
 
+#update-message {
+    position: fixed;
+    color: white;
+    bottom: 0;
+    left: 0;
+    font-size: 1.2vw;
+    width: 25vw;
+    text-align: center;
+}
+
 .information {
     position: fixed;
     width: 25vw;
     height: 100vh;
-    background-image: url(/curio/assets/texture.png);
+    /* background-image: url(/curio/assets/texture.png); */
     display: none;
     color: white;
 }
@@ -96,6 +111,8 @@ input {
 #curio-list {
     padding: 0 2% 0 2%;
     width: 70.8vw;
+    height: 100%;
+    min-height: 100vh;
     margin: 0 0 0 25vw;
     background-color: rgba(60, 60, 60, .6);
 }
@@ -240,27 +257,7 @@ p {
 }
 
 @media only screen and (max-device-width: 736px) {
-    .image {
-        width: 14vw;
-    }
-    #search-input {
-        text-align: center;
-        margin: 5vw 0 0 0;
-    }
-    input {
-        width: 50vw;
-        margin-bottom: 3vh;
-    }
-    #header-image-wrap {
-        margin-right: 0;
-        text-align: center;
-        float: none;
-        display: block;
-    }
-    #headline-text {
-        margin-left: 24.5vw;
-    }
-    #topnav {
-        margin-bottom: 0;
+    .header-block {
+        width: 70.8vw;
     }
 }
