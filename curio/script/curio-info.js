@@ -42,7 +42,7 @@ function setUp() {
         type: 'Haunted, Scrounging',
         image: findImage("decorative urn"),
         location: 'Ruins',
-        searchterms: 'pot',
+        searchterms: 'pot, vase',
         items: images.hand + images.holywater + images.shovel,
         itemsresult: prep([images.loot, "44.4% Gems/Trinket x1 + Gems x2", images.blight, "22.2% Blight", images.disease, "7.4% Disease - Creeping Cough", images.disease, "3.7% Random Disease", images.nothing, "22.2% Nothing"]) + prep([images.loot, "Gems/Trinket x2 + Gems x2"]) + prep([images.quirk, "Bad Quirk - Guilty Conscience"]),
         info: ''
@@ -60,7 +60,7 @@ function setUp() {
         type: 'Haunted, Torture',
         image: findImage("iron maiden"),
         location: 'Ruins',
-        searchterms: 'trap, spikes',
+        searchterms: 'trap, spikes, metal',
         items: images.hand + images.herb,
         itemsresult: prep([images.loot, "40% Any Loot x2", images.quirk, "20% Bad Quirk - Claustrophobia", images.disease, "13.3% Disease - Tetanus", images.disease, "6.7% Random Disease", images.nothing, "20% Nothing"]) + prep([images.loot, "Any Loot x2"]),
         info: ''
@@ -285,7 +285,7 @@ function setUp() {
         type: 'Knowledge, Worship',
         image: findImage("bas relief"),
         location: 'Cove',
-        searchterms: '',
+        searchterms: 'sundial, stone',
         items: images.hand + images.shovel,
         itemsresult: prep([images.quirk, "66.7% Positive Quirk", images.quirk, "22.2% Negative Quirk", images.disease, "11.1% Disease Chance"]) + prep([images.stress, "Stress +100"]),
         info: ''
@@ -312,7 +312,7 @@ function setUp() {
         type: 'Unholy, Worship',
         image: findImage("fish idol"),
         location: 'Cove',
-        searchterms: '',
+        searchterms: 'statue, stone',
         items: images.hand + images.holywater,
         itemsresult: prep([images.debuff, "50% Debuff -25% DMG, -10 ACC until Camp", images.debuff, "50% Debuff -12 DODGE until Camp"]) + prep([images.buff, "Buff +18% DMG until Camp (50%)"]),
         info: ''
@@ -321,7 +321,7 @@ function setUp() {
         type: 'Food',
         image: findImage("giant fish carcass"),
         location: 'Cove',
-        searchterms: '',
+        searchterms: 'dead',
         items: images.hand + images.herb,
         itemsresult: prep([images.loot, "16.7% Gem or Tinkets x1 Gems or Gold x1 + Supply x1", images.disease, "16.7% Disease: The Red Plague", images.blight, "11.1% Blight", images.bleed, "5.6% Bleed", images.nothing, "50% Nothing"]) + prep([images.loot, "Gem or Tinkets x2 + Gem or Gold x1 + Supplies x2"]),
         info: ''
@@ -330,7 +330,7 @@ function setUp() {
         type: 'Treasure, Scrounging',
         image: findImage("giant oyster"),
         location: 'Cove',
-        searchterms: '',
+        searchterms: 'clam',
         items: images.hand + images.shovel + images.treats,
         itemsresult: prep([images.loot, "40% Gold or Trinkets x2", images.bleed, "40% Bleed", images.nothing, "20% Nothing"]) + prep([images.loot, "Gold or Trinkets x3"]) + prep([images.buff, "Buff - Dodge +25"]),
         info: ''
@@ -339,7 +339,7 @@ function setUp() {
         type: 'Reflective',
         image: findImage("ship's figurehead"),
         location: 'Cove',
-        searchterms: '',
+        searchterms: 'statue',
         items: images.hand,
         itemsresult: prep([images.stressheal, "66.7% Stress Heal 25", images.buff, "33.3% Buff +20% DMG, +4 SPD until Camp"]),
         info: ''
@@ -357,7 +357,7 @@ function setUp() {
         type: 'Scrounging, Treasure',
         image: findImage("discarded pack"),
         location: 'All, Cove, Ruins, Warrens, Weald, Courtyard',
-        searchterms: 'dark, gloomy',
+        searchterms: 'backpack, back',
         items: images.hand,
         itemsresult: prep([images.loot, "60% Supplies x1 + Gems or Gold x2 + Journal Entry", images.scouting, "20% Scout Chance", images.nothing, "20% Nothing"]),
         info: ''
@@ -384,7 +384,7 @@ function setUp() {
         type: 'Scrounging',
         image: findImage("sack"),
         location: 'All, Cove, Ruins, Warrens, Weald, Courtyard',
-        searchterms: 'bag',
+        searchterms: 'bags',
         items: images.hand,
         itemsresult: prep([images.loot, "75% Gold", images.nothing, "25% Nothing"]),
         info: ''
@@ -393,7 +393,7 @@ function setUp() {
         type: 'Scrounging',
         image: findImage("sconce"),
         location: 'All, Cove, Ruins, Warrens, Weald, Courtyard',
-        searchterms: 'lamp, torch',
+        searchterms: 'lamp, torch, metal',
         items: images.hand,
         itemsresult: prep([images.loot, "1x Torch"]),
         info: ''
