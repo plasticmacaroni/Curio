@@ -10,7 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>
         $.getScript("script/main.js", function (data, textStatus, jqxhr) {
+            $.getScript("script/curio-info.js", function (data, textStatus, jqxhr) {
             setUp();
+        });
         });
     </script>
     <script>
@@ -41,7 +43,7 @@
     <div id="curio-list">
         <div id="topnav">
             <div class="header-block">
-                <div id="header-image-wrap"><img id="header-image" src="assets/header.png"></div>
+                <img id="header-image" src="assets/header.png">
                 <div id="headline-text">
                     <p>CURIO GUIDE</p>
                 </div>
@@ -63,6 +65,7 @@
         </div>
         <ul class="list">
         </ul>
+        <div id="update-message"><p>View the old version by clicking <a href="/curio/old-version/">here</a>.</p></div>
     </div>
     <script>
         (function (i, s, o, g, r, a, m) {
