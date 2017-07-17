@@ -31,7 +31,7 @@ var options = {
         searchClass: "fuzzy-search",
         location: 0,
         distance: 100,
-        threshold: 0.1,
+        threshold: 0.3,
         multiSearch: true
     },
     item: `<li onmouseover="putUp(this)">
