@@ -161,7 +161,7 @@ function setUp() {
         location: 'Warrens',
         searchterms: 'paper',
         items: images.hand + images.torch,
-        itemsresult: prep([images.scouting, "28.6% Scout", images.stress, "14.3% Stress +15", images.quirk, "9.5% Random Good Quirk", images.quirk, "4.8% Random Negative Quirk", images.nothing, "28.6% Nothing"]) + prep([images.quirk, "Purge Negative Quirk"]),
+        itemsresult: prep([images.scouting, "33.3% Scout", images.stress, "16.7% Stress +15", images.quirk, "11.1% Random Good Quirk", images.quirk, "5.6% Random Negative Quirk", images.nothing, "33.3% Nothing"]) + prep([images.quirk, "Purge Negative Quirk"]),
         info: ''
     }, {
         name: 'Rack of Blades',

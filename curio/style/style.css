@@ -2,6 +2,7 @@ html {
     font-family: 'Ubuntu Condensed', sans-serif;
     cursor: url(/curio/assets/cursor.png), auto;
     overflow-x: hidden;
+    background-color: black;
 }
 
 body {
@@ -259,5 +260,27 @@ p {
 @media only screen and (max-device-width: 736px) {
     .header-block {
         width: 70.8vw;
+    }
+    input {
+        width: 60vw;
+    }
+    #update-message {
+        display: none;
+    }
+    .image {
+        width: 17.7vw;
+    }
+    #sidebar {
+        width: 60vw;
+    }
+    .button-flex {
+        width: 60vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .button-flex button {
+        height: 12vw;
+        width: 12vw;
+        font-size: 2.8vw;
     }
 }
