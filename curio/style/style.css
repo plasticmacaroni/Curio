@@ -267,6 +267,9 @@ p {
     #update-message {
         display: none;
     }
+    .information {
+        overflow-y: scroll;
+    }
     .image {
         width: 17.7vw;
     }
@@ -279,8 +282,8 @@ p {
         margin-right: 0;
     }
     .button-flex button {
-        height: 12vw;
-        width: 12vw;
-        font-size: 2.8vw;
+        min-height: 11vw;
+        min-width: 11vw;
+        font-size: 2.3vw;
     }
 }
